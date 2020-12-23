@@ -99,7 +99,31 @@
 				</div>
 
 				<div class="sectionContent">
-					<p>blah </p>
+
+<p>Click tabs below to view test results.</p>
+
+<div class="tab">
+  <button class="tablinks" onclick="openTest(event, '16personality')" id="defaultOpen">Myers-Briggs Test</button>
+  <button class="tablinks" onclick="openTest(event, 'Learning')">Learning Style Test</button>
+  <button class="tablinks" onclick="openTest(event, 'Big5')">Big Five Personity</button>
+</div>
+
+<div id="16personality" class="tabcontent">
+  <img class="left-img-float" src="images/banner-pt.png">
+  <p>It's true what they say! Nothing lights up Advocates like creating a solution that changes people’s lives. I can be reserved, but can communicate in a way that is warm and sensitive. Honest and insightful i try to make a powerful impression on people around me. I long to work for a company/organisation that is like-minded and share similar values and principles. I will work tirelessly to ensure that the entire team feels valued and fulfilled. <a href="mbpt.pdf">Download Results (pdf) </a> </p>
+</div>
+
+<div id="Learning" class="tabcontent">
+  <h3>Learning</h3>
+  <p>Learning is the capital of France.</p> 
+</div>
+
+<div id="Big5" class="tabcontent">
+  <h3>Big5</h3>
+  <p>Big5 is the capital of Japan.</p>
+</div>
+
+
 				</div>
 			</article>
 
@@ -122,6 +146,24 @@
 
 	</div>
 
+<script>
+function openTest(evt, testName) {
+  var i, tabcontent, tablinks;
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+  document.getElementById(testName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
 
 
 
